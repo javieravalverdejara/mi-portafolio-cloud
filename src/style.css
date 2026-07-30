@@ -1,0 +1,186 @@
+/* ============================================
+   Portafolio Javiera Valverde
+   Paleta: Pantone Cloud Dancer 2026 + acentos retro años 50
+   ============================================ */
+
+:root {
+  --cloud-dancer: #F5F1EA;   /* Pantone Color of the Year 2026 */
+  --ink: #2B2B2B;             /* texto principal, negro suave */
+  --mint: #8FBFA3;            /* verde menta años 50 */
+  --coral: #E8836B;           /* coral/salmón retro */
+  --mustard: #E3B23C;         /* mostaza vintage */
+  --cream-card: #FFFFFF;
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background-color: var(--cloud-dancer);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* ---------- Header / Nav ---------- */
+header {
+  background-color: var(--cloud-dancer);
+  padding: 2rem 5%;
+  border-bottom: 3px solid var(--mustard);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 4px;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--coral);
+  transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ---------- Sections ---------- */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 5%;
+}
+
+section {
+  margin-bottom: 4rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+  border-left: 6px solid var(--mint);
+  padding-left: 1rem;
+}
+
+#sobre-mi p {
+  font-size: 1.1rem;
+  max-width: 65ch;
+}
+
+/* ---------- Proyectos (tarjetas estilo años 50) ---------- */
+#proyectos article {
+  background-color: var(--cream-card);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 6px 6px 0px var(--mustard);
+  border: 2px solid var(--ink);
+}
+
+#proyectos h3 {
+  color: var(--coral);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+/* ---------- Formulario de contacto ---------- */
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  background-color: var(--cream-card);
+  padding: 2rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--mint);
+}
+
+#contact-form label {
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 0.7rem;
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: var(--cloud-dancer);
+}
+
+#contact-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+#contact-form button {
+  align-self: flex-start;
+  background-color: var(--coral);
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#contact-form button:hover {
+  background-color: var(--mustard);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--ink);
+  color: var(--cloud-dancer);
+  font-size: 0.9rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
